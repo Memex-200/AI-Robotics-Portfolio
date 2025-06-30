@@ -1,24 +1,26 @@
-import React from 'react';
-import { Bot, Facebook, Instagram, Phone, MapPin } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
+import React from "react";
+import { Bot, Facebook, Instagram, Phone, MapPin } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export const Footer: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, isRTL } = useLanguage();
 
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Company Info */}
-          <div>
-            <div className="flex items-center space-x-2 mb-4">
+          <div className="flex flex-col items-center md:items-start" style={{direction: isRTL ? 'rtl' : 'ltr'}}>
+            <div
+              className={`flex items-center mb-4 ${isRTL ? 'flex-row-reverse space-x-reverse space-x-2' : 'flex-row space-x-2'}`}
+            >
               <Bot className="w-8 h-8 text-blue-400" />
               <span className="text-xl font-bold">AI Robotics Academy</span>
             </div>
-            <p className="text-gray-400 mb-4 leading-relaxed">
+            <p className="text-gray-400 mb-6 leading-relaxed text-center md:text-start">
               {t.hero.slogan}
             </p>
-            <div className="flex space-x-4">
+            <div className={`flex mt-4 ${isRTL ? 'flex-row-reverse space-x-reverse space-x-4' : 'flex-row space-x-4'}`}>
               <a
                 href="https://www.facebook.com/profile.php?id=61559788044093"
                 target="_blank"
@@ -42,11 +44,46 @@ export const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#home" className="text-gray-400 hover:text-white transition-colors duration-200">Home</a></li>
-              <li><a href="#about" className="text-gray-400 hover:text-white transition-colors duration-200">About</a></li>
-              <li><a href="#services" className="text-gray-400 hover:text-white transition-colors duration-200">Services</a></li>
-              <li><a href="#achievements" className="text-gray-400 hover:text-white transition-colors duration-200">Achievements</a></li>
-              <li><a href="#contact" className="text-gray-400 hover:text-white transition-colors duration-200">Contact</a></li>
+              <li>
+                <a
+                  href="#home"
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  Services
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#achievements"
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  Achievements
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -57,8 +94,12 @@ export const Footer: React.FC = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-blue-400 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-400 text-sm">Asyut - Al-Benaa Street</p>
-                  <p className="text-gray-400 text-sm">Omar Ashdani Tower - First Floor</p>
+                  <p className="text-gray-400 text-sm">
+                    Asyut - Al-Benaa Street
+                  </p>
+                  <p className="text-gray-400 text-sm">
+                    Omar Ashdani Tower - First Floor
+                  </p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">

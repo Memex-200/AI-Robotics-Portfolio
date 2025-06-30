@@ -1,17 +1,21 @@
-import React from 'react';
-import { ArrowRight, Play, Zap, Code, Brain } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
-import { AnimatedRobot } from './AnimatedRobot';
+import React, { useState } from "react";
+import { ArrowRight, Play, Zap, Code, Brain } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
+import { AnimatedRobot } from "./AnimatedRobot";
 
 export const Hero: React.FC = () => {
   const { t, isRTL } = useLanguage();
+  const [showModal, setShowModal] = useState(false);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900"
+    >
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%239C92AC%22 fill-opacity=%220.1%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
-        
+
         {/* Floating Robots */}
         <div className="absolute top-1/4 left-1/4">
           <AnimatedRobot size="sm" color="text-blue-400" delay={0} />
@@ -30,8 +34,8 @@ export const Hero: React.FC = () => {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Main Title */}
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight break-words text-balance whitespace-pre-line">
+            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent block">
               {t.hero.title}
             </span>
           </h1>
@@ -56,12 +60,23 @@ export const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16">
             <button className="group flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
               <span>{t.hero.cta}</span>
-              <ArrowRight className={`w-5 h-5 transition-transform duration-300 group-hover:${isRTL ? '-translate-x-1' : 'translate-x-1'}`} />
+              <ArrowRight
+                className={`w-5 h-5 transition-transform duration-300 group-hover:${
+                  isRTL ? "-translate-x-1" : "translate-x-1"
+                }`}
+              />
             </button>
-            
-            <button className="group flex items-center space-x-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 border border-white/30 hover:border-white/50">
+
+            <button
+              className={`group flex items-center bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 border border-white/30 hover:border-white/50 ${
+                isRTL
+                  ? "flex-row-reverse space-x-reverse space-x-2"
+                  : "space-x-2"
+              }`}
+              onClick={() => setShowModal(true)}
+            >
               <Play className="w-5 h-5" />
-              <span>Watch Demo</span>
+              <span>{t.hero.watchDemo}</span>
             </button>
           </div>
 
@@ -71,21 +86,31 @@ export const Hero: React.FC = () => {
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Code className="w-8 h-8 text-white" />
               </div>
-              <span className="text-white font-medium">Programming</span>
+              <span
+                className={`text-white font-medium ${isRTL ? "mr-2" : "ml-2"}`}
+              >
+                Programming
+              </span>
             </div>
-            
             <div className="flex flex-col items-center space-y-3 group">
               <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Brain className="w-8 h-8 text-white" />
               </div>
-              <span className="text-white font-medium">AI & Robotics</span>
+              <span
+                className={`text-white font-medium ${isRTL ? "mr-2" : "ml-2"}`}
+              >
+                AI & Robotics
+              </span>
             </div>
-            
             <div className="flex flex-col items-center space-y-3 group">
               <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Zap className="w-8 h-8 text-white" />
               </div>
-              <span className="text-white font-medium">Innovation</span>
+              <span
+                className={`text-white font-medium ${isRTL ? "mr-2" : "ml-2"}`}
+              >
+                Innovation
+              </span>
             </div>
           </div>
         </div>
@@ -97,6 +122,30 @@ export const Hero: React.FC = () => {
           <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
+
+      {/* Modal for Video Demo */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80">
+          <div className="relative bg-gray-900 rounded-lg shadow-lg p-4 max-w-2xl w-full flex flex-col items-center">
+            <button
+              className="absolute top-2 right-2 text-white text-2xl font-bold hover:text-red-400"
+              onClick={() => setShowModal(false)}
+              aria-label="Close"
+            >
+              &times;
+            </button>
+            <video
+              src="/فيديو كريم لتعليم البرمجه.mp4"
+              controls
+              autoPlay
+              className="w-full max-h-[70vh] rounded-lg border border-white/20"
+            >
+              Your browser does not support the video tag.
+            </video>
+            <span className="mt-2 text-white">Demo Video</span>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Menu, X, Sun, Moon, Globe, Bot } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
-import { useTheme } from '../contexts/ThemeContext';
+import React, { useState } from "react";
+import { Menu, X, Sun, Moon, Globe, Bot } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
+import { useTheme } from "../contexts/ThemeContext";
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,11 +9,11 @@ export const Header: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
 
   const navItems = [
-    { key: 'home', href: '#home' },
-    { key: 'about', href: '#about' },
-    { key: 'services', href: '#services' },
-    { key: 'achievements', href: '#achievements' },
-    { key: 'contact', href: '#contact' }
+    { key: "home", href: "#home" },
+    { key: "about", href: "#about" },
+    { key: "services", href: "#services" },
+    { key: "achievements", href: "#achievements" },
+    { key: "contact", href: "#contact" },
   ];
 
   return (
@@ -51,7 +51,7 @@ export const Header: React.FC = () => {
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
             >
-              {theme === 'light' ? (
+              {theme === "light" ? (
                 <Moon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
               ) : (
                 <Sun className="w-5 h-5 text-gray-700 dark:text-gray-300" />
@@ -60,12 +60,12 @@ export const Header: React.FC = () => {
 
             {/* Language Toggle */}
             <button
-              onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
+              onClick={() => setLanguage(language === "en" ? "ar" : "en")}
               className="flex items-center space-x-1 p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
             >
               <Globe className="w-5 h-5 text-gray-700 dark:text-gray-300" />
               <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                {language.toUpperCase()}
+                {language === "en" ? "AR" : "EN"}
               </span>
             </button>
 

@@ -1,9 +1,10 @@
-import React from 'react';
-import { MapPin, Phone, Facebook, Instagram } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
+import React from "react";
+import { MapPin, Phone, Facebook, Instagram } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export const Contact: React.FC = () => {
   const { t } = useLanguage();
+  const { isRTL } = useLanguage();
 
   return (
     <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
@@ -27,7 +28,10 @@ export const Contact: React.FC = () => {
                 </h3>
                 <div className="space-y-6">
                   {t.contact.branchList.map((branch, index) => (
-                    <div key={index} className="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg">
+                    <div
+                      key={index}
+                      className="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg"
+                    >
                       <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                         {branch.name}
                       </h4>
@@ -64,7 +68,13 @@ export const Contact: React.FC = () => {
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                   {t.contact.followUs}
                 </h3>
-                <div className="flex space-x-4">
+                <div
+                  className={`flex mt-6 justify-center ${
+                    isRTL
+                      ? "flex-row-reverse space-x-reverse space-x-6"
+                      : "flex-row space-x-6"
+                  }`}
+                >
                   <a
                     href="https://www.facebook.com/profile.php?id=61559788044093"
                     target="_blank"
