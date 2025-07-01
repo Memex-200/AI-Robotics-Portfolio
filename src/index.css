@@ -50,6 +50,43 @@ body {
   background: #374151;
 }
 
+/* Mobile improvements */
+@media (max-width: 768px) {
+  /* Improve touch targets */
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Better text readability on mobile */
+  body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Better modal handling on mobile */
+  .modal-video {
+    max-height: 80vh;
+    max-width: 95vw;
+  }
+}
+
+/* RTL improvements */
+.rtl button {
+  text-align: center;
+}
+
+.rtl .space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .dark ::-webkit-scrollbar-thumb {
   background: #6b7280;
 }
