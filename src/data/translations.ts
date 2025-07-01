@@ -91,12 +91,11 @@ export const translations = {
       branchList: [
         {
           name: "First Branch",
-          location:
-            "Asyut - Al-Benaa Street - Omar Ashdani Tower - First Floor",
+          location: "Asyut, Feryal, El-Galaa Street, Omar Effendi Tower, First Floor",
         },
         {
           name: "Second Branch",
-          location: "Al-Watheq - Marsa Al-Rasabat Street - Ali Mazen Tower",
+          location: "Abutig, Rahbat School Street, Ali Mazen Tower",
         },
       ],
       phones: ["01040311505", "01505227778"],
@@ -194,11 +193,11 @@ export const translations = {
       branchList: [
         {
           name: "الفرع الأول",
-          location: "أسيوط - شارع البناء - برج عمر أشداني - الدور الأول",
+          location: "اسيوط فريال شارع الجلاء برج عمر افندي الدور الاول",
         },
         {
           name: "الفرع الثاني",
-          location: "الواثق - شارع مرسى الراسبات - برج علي مازن",
+          location: "ابوتيج شارع مدرسة راهبات برج ا علي مازن",
         },
       ],
       phones: ["01040311505", "01505227778"],
