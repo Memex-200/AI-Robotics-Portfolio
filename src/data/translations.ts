@@ -8,11 +8,11 @@ export const translations = {
       contact: "Contact",
     },
     hero: {
-      title: "AI Robotics Academy",
+      title: "AI Robotics Company",
       slogan:
         "Inspiring young innovators to dream, design, and drive the future.",
       description:
-        "Empowering minds to shape tomorrow—our academy ignites curiosity and innovation in programming and artificial intelligence. From playful first steps to advanced mastery, we inspire every learner, nurturing future leaders and creators at every age.",
+        "Empowering minds to shape tomorrow—our company ignites curiosity and innovation in programming and artificial intelligence. From playful first steps to advanced mastery, we inspire every learner, nurturing future leaders and creators at every age.",
       cta: "Start Your Journey",
       watchDemo: "Watch Demo",
     },
@@ -51,7 +51,8 @@ export const translations = {
         "Web design and programming",
         "UI/UX design and development",
       ],
-      diplomaDescription: "Professional certification program with hands-on training and industry recognition.",
+      diplomaDescription:
+        "Professional certification program with hands-on training and industry recognition.",
       professionalList: [
         {
           category: "Cisco Networking",
@@ -111,10 +112,10 @@ export const translations = {
       contact: "تواصل معنا",
     },
     hero: {
-      title: "أكاديمية الذكاء الاصطناعي والروبوتات",
+      title: "شركة الذكاء الاصطناعي والروبوتات",
       slogan: "نلهم المبتكرين الصغار ليحلموا، ويصمّموا، ويقودوا المستقبل.",
       description:
-        "نُشعل شرارة الإبداع ونُطلق العنان للفضول في عقول الجيل الجديد، حيث نُقدّم برامج البرمجة والذكاء الاصطناعي بأساليب مبتكرة تناسب جميع الأعمار، من أولى خطوات الطفولة حتى التميز الجامعي، لنصنع قادة ومبدعين للمستقبل.",
+        "نُشعل شرارة الإبداع ونُطلق العنان للفضول في عقول الجيل الجديد، حيث نُقدّم برامج البرمجة والذكاء الاصطناعي بأساليب مبتكرة تناسب جميع الأعمار، من أولى خطوات الطفولة حتى التميز الجامعي، لنصنع قادة ومبدعين للمستقبل. شركتنا تفتح آفاق المستقبل.",
       cta: "ابدأ رحلتك",
       watchDemo: "شاهد العرض",
     },
@@ -153,7 +154,8 @@ export const translations = {
         "تصميم وبرمجة مواقع الويب",
         "تصميم واجهات UI/UX",
       ],
-      diplomaDescription: "برنامج شهادة مهنية مع تدريب عملي واعتراف من الصناعة.",
+      diplomaDescription:
+        "برنامج شهادة مهنية مع تدريب عملي واعتراف من الصناعة.",
       professionalList: [
         {
           category: "شبكات سيسكو",
