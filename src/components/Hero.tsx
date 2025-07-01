@@ -57,8 +57,8 @@ export const Hero: React.FC = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16">
-            <button className="group flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+          <div className={`flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 mb-16 ${isRTL ? 'sm:space-x-reverse sm:space-x-6' : 'sm:space-x-6'}`}>
+            <button className={`group flex items-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto ${isRTL ? 'flex-row-reverse space-x-reverse space-x-2' : 'space-x-2'}`}>
               <span>{t.hero.cta}</span>
               <ArrowRight
                 className={`w-5 h-5 transition-transform duration-300 group-hover:${
@@ -68,7 +68,7 @@ export const Hero: React.FC = () => {
             </button>
 
             <button
-              className={`group flex items-center bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 border border-white/30 hover:border-white/50 ${
+              className={`group flex items-center bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 border border-white/30 hover:border-white/50 w-full sm:w-auto ${
                 isRTL
                   ? "flex-row-reverse space-x-reverse space-x-2"
                   : "space-x-2"
@@ -81,34 +81,28 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Feature Icons */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-2xl mx-auto px-4">
             <div className="flex flex-col items-center space-y-3 group">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Code className="w-8 h-8 text-white" />
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Code className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
               </div>
-              <span
-                className={`text-white font-medium ${isRTL ? "mr-2" : "ml-2"}`}
-              >
+              <span className="text-white font-medium text-sm sm:text-base text-center">
                 Programming
               </span>
             </div>
             <div className="flex flex-col items-center space-y-3 group">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Brain className="w-8 h-8 text-white" />
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Brain className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
               </div>
-              <span
-                className={`text-white font-medium ${isRTL ? "mr-2" : "ml-2"}`}
-              >
+              <span className="text-white font-medium text-sm sm:text-base text-center">
                 AI & Robotics
               </span>
             </div>
             <div className="flex flex-col items-center space-y-3 group">
-              <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Zap className="w-8 h-8 text-white" />
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Zap className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
               </div>
-              <span
-                className={`text-white font-medium ${isRTL ? "mr-2" : "ml-2"}`}
-              >
+              <span className="text-white font-medium text-sm sm:text-base text-center">
                 Innovation
               </span>
             </div>
@@ -125,10 +119,10 @@ export const Hero: React.FC = () => {
 
       {/* Modal for Video Demo */}
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80">
-          <div className="relative bg-gray-900 rounded-lg shadow-lg p-4 max-w-2xl w-full flex flex-col items-center">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 p-4">
+          <div className="relative bg-gray-900 rounded-lg shadow-lg p-4 max-w-4xl w-full max-h-[90vh] flex flex-col items-center overflow-hidden">
             <button
-              className="absolute top-2 right-2 text-white text-2xl font-bold hover:text-red-400"
+              className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center text-white text-xl font-bold hover:text-red-400 bg-black/50 rounded-full hover:bg-black/70 transition-colors"
               onClick={() => setShowModal(false)}
               aria-label="Close"
             >
@@ -138,11 +132,12 @@ export const Hero: React.FC = () => {
               src="/فيديو كريم لتعليم البرمجه.mp4"
               controls
               autoPlay
-              className="w-full max-h-[70vh] rounded-lg border border-white/20"
+              className="w-full max-h-[80vh] rounded-lg border border-white/20"
+              style={{ maxWidth: '100%', height: 'auto' }}
             >
               Your browser does not support the video tag.
             </video>
-            <span className="mt-2 text-white">Demo Video</span>
+            <span className="mt-3 text-white text-sm sm:text-base">Demo Video</span>
           </div>
         </div>
       )}

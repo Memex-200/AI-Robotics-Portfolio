@@ -59,7 +59,7 @@ export const Achievements: React.FC = () => {
                 href="/153439462-Airobotics.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block text-blue-700 dark:text-blue-300 underline hover:text-purple-600 dark:hover:text-purple-400 font-semibold transition-colors duration-200"
+                className="inline-block text-blue-700 dark:text-blue-300 underline hover:text-purple-600 dark:hover:text-purple-400 font-semibold transition-colors duration-200 px-4 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-800"
               >
                 View Accreditation Certificate (PDF)
               </a>
