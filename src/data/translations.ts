@@ -51,6 +51,7 @@ export const translations = {
         "Web design and programming",
         "UI/UX design and development",
       ],
+      diplomaDescription: "Professional certification program with hands-on training and industry recognition.",
       professionalList: [
         {
           category: "Cisco Networking",
@@ -152,6 +153,7 @@ export const translations = {
         "تصميم وبرمجة مواقع الويب",
         "تصميم واجهات UI/UX",
       ],
+      diplomaDescription: "برنامج شهادة مهنية مع تدريب عملي واعتراف من الصناعة.",
       professionalList: [
         {
           category: "شبكات سيسكو",
